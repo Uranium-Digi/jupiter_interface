@@ -1,0 +1,14 @@
+[package]
+name = "simple_swap"
+version = "0.1.0"
+edition = "2021"
+description = "Example of using Jupiter Interface for simple token swaps"
+
+[lib]
+crate-type = ["cdylib", "lib"]
+
+[dependencies]
+anchor-lang = "0.30.1"
+anchor-spl = "0.30.1"
+solana-program = ">=1.18, <2"
+jupiter_interface = { path = "../.." }

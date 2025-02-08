@@ -10,29 +10,4 @@ Compatible with anchor >=0.30.1
 
 Generated and published due to previous crates being incompatible with future versions and not building.
 
-
-## Example Code
-
-```rs
-
-    // Create swap instruction
-    let swap_ix = JupiterClient::new(jupiter_program.key).swap(
-        amount_in,
-        slippage_bps,&[
-            input_token_account.clone(),
-            output_token_account.clone(),
-            user_transfer_authority.clone(),
-            token_ledger.clone()
-        ],
-    )?;
-    // Execute CPI
-    invoke(&swap_ix,&[
-        input_token_account.clone(),
-        output_token_account.clone(),
-        user_transfer_authority.clone(),
-        token_ledger.clone(),
-        jupiter_program.clone(),
-    ])?;
-    Ok(())
-}
-```
+See `/examples` for a simple swapping function.
