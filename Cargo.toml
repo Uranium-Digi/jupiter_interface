@@ -8,7 +8,7 @@ license = "MIT OR Apache-2.0"
 keywords = ["solana", "anchor", "cpi", "jupiter", "solores"]
 categories = ["cryptography::cryptocurrencies"]
 readme = "README.md"
-repository = "https://github.com/cianyyz/jupiter-cpi-interface"
+homepage = "https://github.com/cianyyz/jupiter-cpi-interface"
 repository = "https://github.com/cianyyz/jupiter-cpi-interface"
 
 
