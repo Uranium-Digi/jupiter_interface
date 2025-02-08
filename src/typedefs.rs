@@ -1,24 +1,25 @@
-use borsh::{BorshDeserialize, BorshSerialize};
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+use anchor_lang::prelude::*;
+
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct AddLiquidity {
     pub token_amount_in: u64,
     pub min_lp_amount_out: u64,
     pub token_amount_pre_swap: Option<u64>,
 }
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct RemoveLiquidity {
     pub lp_amount_in: u64,
     pub min_amount_out: u64,
 }
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct AmountWithSlippage {
     pub amount: u64,
     pub slippage_bps: u16,
 }
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub struct RoutePlanStep {
     pub swap: Swap,
@@ -26,13 +27,13 @@ pub struct RoutePlanStep {
     pub input_index: u8,
     pub output_index: u8,
 }
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum Side {
     Bid,
     Ask,
 }
-#[derive(Clone, Debug, BorshDeserialize, BorshSerialize, PartialEq)]
+#[derive(Clone, Debug, PartialEq, AnchorSerialize, AnchorDeserialize)]
 #[cfg_attr(feature = "serde", derive(serde::Serialize, serde::Deserialize))]
 pub enum Swap {
     Saber,
